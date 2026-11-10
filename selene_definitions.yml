@@ -1,7 +1,7 @@
 base: roblox
 name: selene_defs
 globals:
-  # override Roblox require style with string requires
-  require:
+  # Luau global that selene's bundled roblox standard library does not know about yet.
+  math.isfinite:
     args:
-      - type: string
+      - type: number

@@ -1,4 +1,6 @@
-local __DEV__ = _G.__DEV__ == "true"
+local RunService = game:GetService("RunService")
+
+local __DEV__ = RunService:IsStudio()
 
 local Log = {}
 
