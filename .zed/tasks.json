@@ -1,0 +1,49 @@
+[
+	{
+		"label": "Serve and autogenerate sourcemap (Windows)",
+		"command": "rojo serve & rojo sourcemap --watch --include-non-scripts --output sourcemap.json",
+		"shell": {
+			"with_arguments": {
+				"program": "C:\\Program Files\\Git\\bin\\bash.exe",
+				"args": ["--login", "-i"],
+			},
+		},
+	},
+
+	{
+		"label": "Install packages and export types (Windows)",
+		"command": "set -e && wally install && rojo sourcemap default.project.json -o sourcemap.json && wally-package-types --sourcemap sourcemap.json Packages/ && wally-package-types --sourcemap sourcemap.json ServerPackages/",
+		"shell": {
+			"with_arguments": {
+				"program": "C:\\Program Files\\Git\\bin\\bash.exe",
+				"args": ["--login", "-i"],
+			},
+		},
+	},
+
+	{
+		"label": "Push assets with Asphalt (Windows)",
+		"command": "sh scripts/asphalt-sync.sh",
+		"shell": {
+			"with_arguments": {
+				"program": "C:\\Program Files\\Git\\bin\\bash.exe",
+				"args": ["--login", "-i"],
+			},
+		},
+	},
+
+	{
+		"label": "Serve and autogenerate sourcemap",
+		"command": "rojo serve & rojo sourcemap --watch --include-non-scripts --output sourcemap.json",
+	},
+
+	{
+		"label": "Install packages and export types",
+		"command": "set -e && wally install && rojo sourcemap default.project.json -o sourcemap.json && wally-package-types --sourcemap sourcemap.json Packages/ && wally-package-types --sourcemap sourcemap.json ServerPackages/",
+	},
+
+	{
+		"label": "Push assets with Asphalt",
+		"command": "sh scripts/asphalt-sync.sh",
+	},
+]
