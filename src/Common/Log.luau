@@ -1,12 +1,12 @@
 local RunService = game:GetService("RunService")
 
-local __DEV__ = RunService:IsStudio()
+local IS_STUDIO = RunService:IsStudio()
 
 local Log = {}
 
 local function createLogFunction(levelName: string, logFn: (...string) -> (), printInDev: boolean)
 	return function(...: any)
-		if printInDev and not __DEV__ then
+		if printInDev and not IS_STUDIO then
 			return
 		end
 
